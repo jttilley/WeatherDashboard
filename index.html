@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Assets/style.css" />
-</head>
-<body>
-    <header>
-        <div class="col">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather Dashboard</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="./Assets/style.css" />
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous" />
+    </head>
+    <body>
+        <header>
             <h1>Weather Dashboard</h1>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-3 cityList">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label for="search" class="sr-only">Search For a City:</label>
-                        <input class="form-control" id="search" type="text" placeholder="City Name">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-search" style="font-size: medium;">GO</i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div class="col">
-                <div class="row cityInfo">
-                    <div class="col">
-                        <div type="inline" id="cityName">city</div>
-                        <div type="inline" id="date"></div>
-                        <p id="temperature"></p>
-                        <p id="humidity"></p>
-                        <p id="wind"></p>
-                        <p id="uv"></p>
+        </header>
+        <main class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card cities" style="width: 18rem;">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="search" class="sr-only">Search For a City:</label>
+                                <input class="form-control" id="search" type="text" placeholder="City Name">
+                                <button type="submit" class="btn btn-primary" id="update">
+                                    <i class="fas fa-search" style="font-size: large;"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="row forcast">
-                    <div class="col-12">
-                        <h4>5-Day Forcast:</h3>
-                        <div class="daysForcast">
-        
+                <div class="col-md">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card weather">
+                                <div class="card-body cityInfo">
+                                    <div class="card-title">
+                                        <div id="date"></div>
+                                        <div id="cityName"></div>
+                                        <img class="icon" src="?">
+                                    </div>
+                                    <p class="card-text" id="temperature"></p>
+                                    <p class="card-text" id="humidity"></p>
+                                    <p class="card-text" id="wind"></p>
+                                    <p class="card-text" id="uv"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="forcast">
+                                <h4>5-Day Forcast:</h3>
+                                <div class="daysForcast">
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./Assets/script.js"></script>  
-</body>
+        </main>
+            
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./Assets/script.js"></script>  
+    </body>
 </html>

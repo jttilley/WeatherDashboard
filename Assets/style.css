@@ -1,6 +1,10 @@
+/* main {
+    display: flex;
+}
+
 .cityList {
     display: block;
-}
+} */
 
 header {
     background-color: dimgrey;
@@ -10,7 +14,22 @@ header {
     padding: 5px;
 }
 
+#search {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: 20px;
+}
 
+#update {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+ .cardTitle {
+    display: flex;
+    flex-wrap: nowrap;
+    
+} 
 
 #cityName {
     font-size: 2rem;
@@ -19,3 +38,8 @@ header {
 #date {
     font-size: 1.5rem;
 }
+
+.daysForcast {
+    display: flex;
+    justify-content: space-evenly;
+} 
