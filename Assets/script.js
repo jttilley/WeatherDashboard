@@ -15,7 +15,7 @@ function makeFarenheit(k) {
 
 function getCityInfo(city) {
 
-    let queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},co,${country}&mode=json&appid=${key}`
+    let queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&mode=json&appid=${key}`
     console.log("queryURL", queryURL)
     
     $.ajax({
@@ -146,6 +146,7 @@ const updateWeather = function(res) {
             style += "background-color: lightskyblue;";
         }
         card.attr("style", style);
+        card.slideDown("slow");
     }
 }
 
@@ -164,6 +165,7 @@ function updateList() {
     for (i=0; i < cityList.length; i++) {
         let li = $("<li>").attr("class","list-group-item").text(cityList[i]);
         li.attr("data-id", i);
+        li.attr("style", "background-color: aliceblue;")
         cityListEl.append(li);
     }
 }
@@ -173,15 +175,16 @@ $("form").on("submit", function(e) {
     e.stopPropagation();
 
     var city = $("#search").val();
+    
     getCityInfo(city);
+    $("#search").val("");
 })
 
 $(".city-list").on("click","li", function(e) {
     e.stopPropagation;
     e.preventDefault;
-    console.log($(this).text());
+    // console.log($(this).text());
     
-
     getCityInfo($(this).text());
 })
 

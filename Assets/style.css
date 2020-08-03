@@ -1,5 +1,9 @@
 header {
-    background-color: dimgrey;
+    background-image: url("weather Header.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: skyblue;
     text-align: center;
     color: white;
     margin: auto;
@@ -47,3 +51,4 @@ header {
 .city-list {
     text-align: center;
 }
+
