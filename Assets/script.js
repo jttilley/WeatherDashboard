@@ -1,9 +1,3 @@
-{/* <h2 id="cityName"></h2>
-<p id="temperature"></p>
-<p id="humidity"></p>
-<p id="wind"></p>
-<p id="uv"></p> */}
-
 const key = "20c39a25dd0737f0b31ac27a4c0e3325";
 var country = "us";
 let cityList = JSON.parse(localStorage.getItem("cityList")) || [];
@@ -14,7 +8,6 @@ function makeFarenheit(k) {
 }
 
 function getCityInfo(city) {
-
     let queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&mode=json&appid=${key}`
     console.log("queryURL", queryURL)
     
@@ -104,8 +97,6 @@ const updateWeather = function(res) {
 
         //make a card
         var card = $("<div>").attr("class","card");
-        
-        
 
         //date
         var date = $("<p>").text(moment().add(i,'days').format('l'));
@@ -114,13 +105,14 @@ const updateWeather = function(res) {
         var icon = $("<img>").attr("src","http://openweathermap.org/img/wn/" + daily.weather[0].icon + "@2x.png");
         console.log('res.daily[i].weather[0].icon: ', daily.weather[0].icon);
         console.log('daily.weather[0].icon: ', daily.weather[0].icon);
+        icon.attr("style", "width: auto; height: auto;")
 
         // description
         var weatherDesc =  daily.weather[0].description
         var desc = $("<p>").text(weatherDesc);
         console.log('daily.weather[0].description: ', daily.weather[0].description);
         
-        //temp farenhite
+        //temp 
         var f = daily.temp.max.toPrecision(3);
         var dayTemp = $("<p>").text(`Temperature: ${f} F`);
         console.log('f: ', f);
@@ -135,7 +127,7 @@ const updateWeather = function(res) {
         // append card to html
         $(".daysForcast").append(card);
 
-        let style = "width: 18%; font-size: x-small; "
+        let style = "margin: 10px; padding: 10px; font-size: small; "
         if (weatherDesc.match("rain")) {
             style += "background-color: grey; color: white;"
         } else if (weatherDesc.match("clear")) {

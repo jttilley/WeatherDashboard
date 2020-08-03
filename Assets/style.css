@@ -21,7 +21,7 @@ header {
     border-bottom-left-radius: 0;
 }
 
- .card-title {
+.card-title {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -43,9 +43,13 @@ header {
 .weather p {
     width: 200px
 }
+
 .daysForcast {
     display: flex;
     justify-content: space-evenly;
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
 } 
 
 .city-list {
